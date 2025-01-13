@@ -61,22 +61,8 @@ class MainFrame(wx.Frame):
         event.Skip()
 
     def button_exit_click(self, event):  # wxGlade: MainFrame.<event_handler>
-		self.Close(True)
+        self.Close(True)
 
 # end of class MainFrame
 
-class MyApp(wx.App):
-    def OnInit(self):
-        self.frame = MainFrame(None, wx.ID_ANY, "")
-        self.SetTopWindow(self.frame)
-        self.frame.Show()
-        return True
 
-# end of class MyApp
-
-if __name__ == "__main__":
-
-# Main Program
-
-    app = MyApp(0)
-    app.MainLoop()

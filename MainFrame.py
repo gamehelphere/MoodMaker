@@ -50,7 +50,18 @@ class MainFrame(wx.Frame):
 
         self.Layout()
         self.Centre()
+        
+        self.button_start.Bind(wx.EVT_BUTTON, self.button_start_click)
+        self.button_exit.Bind(wx.EVT_BUTTON, self.button_exit_click)
+                
         # end wxGlade
+
+    def button_start_click(self, event):  # wxGlade: MainFrame.<event_handler>
+        print("Event handler 'button_start_click' not implemented!")
+        event.Skip()
+
+    def button_exit_click(self, event):  # wxGlade: MainFrame.<event_handler>
+		self.Close(True)
 
 # end of class MainFrame
 

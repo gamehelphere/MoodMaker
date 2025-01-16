@@ -12,6 +12,7 @@ import wx
 # begin wxGlade: extracode
 # end wxGlade
 
+from MaterializeMood import MaterializeMood
 
 class MainFrame(wx.Frame):
     def __init__(self, *args, **kwds):
@@ -55,9 +56,13 @@ class MainFrame(wx.Frame):
         self.button_exit.Bind(wx.EVT_BUTTON, self.button_exit_click)
                 
         # end wxGlade
+        
+        self._materializeMood = MaterializeMood()
+        self._label_mood = label_mood
 
     def button_start_click(self, event):  # wxGlade: MainFrame.<event_handler>
-        print("Event handler 'button_start_click' not implemented!")
+        #print("Event handler 'button_start_click' not implemented!")
+        self._label_mood.SetLabel(self._materializeMood.makeMood())
         event.Skip()
 
     def button_exit_click(self, event):  # wxGlade: MainFrame.<event_handler>

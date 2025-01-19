@@ -1,3 +1,6 @@
+from pathlib import Path
+import random
+
 class MaterializeMood:
 
 	
@@ -10,6 +13,24 @@ class MaterializeMood:
 		Write code to open a file and get a mood by random. Return the retrieved mood back to the caller.
 		
 		"""
-		self._newMood = "A test mood."
+		
+		moodList = []
+		moodroll = 0
+		filePath = Path('moodbank.txt')
+		if filePath.exists():
+			with open('moodbank.txt') as moodFile:
+				for currentMood in moodFile:
+					moodList.append(currentMood)
+			moodFile.close()
+		else:
+			self._newMood = 'Cannot open moodbank.txt file.'
+		print("List contents\n")
+		print(moodList)
+		
+		#self._newMood = "A test mood."
+		
+		moodroll = random.randint(0, len(moodList) - 1)
+		#print(moodroll)
+		self._newMood = moodList[moodroll]
 		
 		return self._newMood

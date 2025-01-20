@@ -32,11 +32,13 @@ class MainFrame(wx.Frame):
         label_title.SetFont(wx.Font(20, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, 0, "System-ui"))
         sizer_1.Add(label_title, 0, wx.EXPAND, 0)
 
-        label_mood = wx.StaticText(self.panel_1, wx.ID_ANY, "textMood", style=wx.ALIGN_CENTER_HORIZONTAL)
+        label_mood = wx.StaticText(self.panel_1, wx.ID_ANY, "\n\n\n\nPress 'Start' button to begin.", style=wx.ALIGN_CENTER_HORIZONTAL | wx.ST_NO_AUTORESIZE)
+        #label_mood = wx.StaticText(self.panel_1, wx.ID_ANY, "textMood", style=wx.ALIGN_CENTER | wx.ST_NO_AUTORESIZE)
         label_mood.SetBackgroundColour(wx.Colour(255, 255, 255))
         label_mood.SetFont(wx.Font(16, wx.FONTFAMILY_SWISS, wx.FONTSTYLE_ITALIC, wx.FONTWEIGHT_NORMAL, 0, ""))
         label_mood.Wrap(100)
         sizer_1.Add(label_mood, 4, wx.ALL | wx.EXPAND, 5)
+        #sizer_1.Add(label_mood, proportion = 1)
 
         sizer_2 = wx.BoxSizer(wx.HORIZONTAL)
         sizer_1.Add(sizer_2, 0, wx.ALIGN_CENTER_HORIZONTAL | wx.ALL, 8)

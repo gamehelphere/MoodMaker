@@ -23,7 +23,7 @@ class MaterializeMood:
 					moodList.append(currentMood)
 			moodFile.close()
 		else:
-			self._newMood = 'Cannot open moodbank.txt file.'
+			self._newMood = '\n\n\n\nCannot open moodbank.txt file.'
 		print("List contents\n")
 		print(moodList)
 		
@@ -31,6 +31,6 @@ class MaterializeMood:
 		
 		moodroll = random.randint(0, len(moodList) - 1)
 		#print(moodroll)
-		self._newMood = moodList[moodroll]
+		self._newMood = "\n\n\n\n\n\n" + moodList[moodroll]
 		
 		return self._newMood
